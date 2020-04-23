@@ -32,22 +32,24 @@ class _DicePageState extends State<DicePage> {
         children: <Widget>[
           Expanded(
             child: FlatButton(
-              child: Image.asset('images/dice$leftDiceNumber.png'),
               onPressed: () {
                 setState(() {
                   leftDiceNumber = Random().nextInt(6) + 1;
+                  rightDiceNumber = Random().nextInt(6) + 1;
                 });
               },
+              child: Image.asset('images/dice$leftDiceNumber.png'),
             ),
           ),
           Expanded(
             child: FlatButton(
-              child: Image.asset('images/dice$rightDiceNumber.png'),
               onPressed: () {
                 setState(() {
+                  leftDiceNumber = Random().nextInt(6) + 1;
                   rightDiceNumber = Random().nextInt(6) + 1;
                 });
               },
+              child: Image.asset('images/dice$rightDiceNumber.png'),
             ),
           ),
         ],
